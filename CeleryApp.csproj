@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6B39A909-BC0D-4C45-ABEE-A534DC03F1C8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CeleryApp</RootNamespace>
+    <AssemblyName>CeleryApp</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60DC8134-EBA5-43B8-BCC9-BB4BC16C2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>CeleryApp.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BetterFolderBrowser">
+      <HintPath>..\..\Downloads\CeleryApp_DL\Release\BetterFolderBrowser.dll</HintPath>
+    </Reference>
+    <Reference Include="Dragablz">
+      <HintPath>..\..\Downloads\CeleryApp_DL\Release\Dragablz.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.Core">
+      <HintPath>..\..\Downloads\CeleryApp_DL\Release\Microsoft.Web.WebView2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.Wpf">
+      <HintPath>..\..\Downloads\CeleryApp_DL\Release\Microsoft.Web.WebView2.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="MaterialDesignThemes.Wpf" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="-Module-.cs" />
+    <Compile Include="Animation.cs" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CeleryAPI\Yara.cs" />
+    <Compile Include="CeleryApp_ProcessedByFody.cs" />
+    <Compile Include="Costura\AssemblyLoader.cs" />
+    <Compile Include="EyeStepPackage\EyeStep.cs" />
+    <Compile Include="EyeStepPackage\OP_TYPES.cs" />
+    <Compile Include="FileHelp.cs" />
+    <Compile Include="Imports.cs" />
+    <Compile Include="Injector\InjectionStatus.cs" />
+    <Compile Include="Injector\MsStorePlayer.cs" />
+    <Compile Include="Injector\WindowsPlayer.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManualMapApi\MapInject.cs" />
+    <Compile Include="Misc\Miscellaneous.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.cs" />
+    <Compile Include="Properties\Settings.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <DependentUpon>Settings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Splash.xaml.cs">
+      <DependentUpon>Splash.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Types.cs" />
+    <Compile Include="Util.cs" />
+    <Compile Include="WebViewA.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Costura\ar-dz\materialdesignextensions\resources\dll.compressed" />
+    <EmbeddedResource Include="Costura\betterfolderbrowser\dll.compressed" />
+    <EmbeddedResource Include="Costura\costura\dll.compressed" />
+    <EmbeddedResource Include="Costura\costura\pdb.compressed" />
+    <EmbeddedResource Include="Costura\cs-cz\materialdesignextensions\resources\dll.compressed" />
+    <EmbeddedResource Include="Costura\cs\materialdesignextensions\resources\dll.compressed" />
+    <EmbeddedResource Include="Costura\de\materialdesignextensions\resources\dll.compressed" />
+    <EmbeddedResource Include="Costura\dragablz\dll.compressed" />
+    <EmbeddedResource Include="Costura\dragablz\pdb.compressed" />
+    <EmbeddedResource Include="Costura\fr-fr\materialdesignextensions\resources\dll.compressed" />
+    <EmbeddedResource Include="Costura\fr\materialdesignextensions\resources\dll.compressed" />
+    <EmbeddedResource Include="Costura\materialdesigncolors\dll.compressed" />
+    <EmbeddedResource Include="Costura\materialdesigncolors\pdb.compressed" />
+    <EmbeddedResource Include="Costura\materialdesignextensions\dll.compressed" />
+    <EmbeddedResource Include="Costura\materialdesignthemes\wpf\dll.compressed" />
+    <EmbeddedResource Include="Costura\materialdesignthemes\wpf\pdb.compressed" />
+    <EmbeddedResource Include="Costura\metadata" />
+    <EmbeddedResource Include="Costura\microsoft\web\webview2\core\dll.compressed" />
+    <EmbeddedResource Include="Costura\microsoft\web\webview2\winforms\dll.compressed" />
+    <EmbeddedResource Include="Costura\microsoft\web\webview2\wpf\dll.compressed" />
+    <EmbeddedResource Include="Costura\microsoft\xaml\behaviors\dll.compressed" />
+    <EmbeddedResource Include="Costura\microsoft\xaml\behaviors\pdb.compressed" />
+    <EmbeddedResource Include="Costura\pt-br\materialdesignextensions\resources\dll.compressed" />
+    <EmbeddedResource Include="Costura\pt\materialdesignextensions\resources\dll.compressed" />
+    <EmbeddedResource Include="Costura\ru-ru\materialdesignextensions\resources\dll.compressed" />
+    <EmbeddedResource Include="Costura\ru\materialdesignextensions\resources\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\diagnostics\diagnosticsource\dll.compressed" />
+    <EmbeddedResource Include="Costura\uz-latn-uz\materialdesignextensions\resources\dll.compressed" />
+    <EmbeddedResource Include="Properties\Resources.resources" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Splash.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="celerylogo.ico" />
+    <Resource Include="celerylogo.png" />
+    <Resource Include="dexexplorerv2.png" />
+    <Resource Include="fonts\poppins-black.ttf" />
+    <Resource Include="fonts\poppins-blackitalic.ttf" />
+    <Resource Include="fonts\poppins-bold.ttf" />
+    <Resource Include="fonts\poppins-bolditalic.ttf" />
+    <Resource Include="fonts\poppins-extrabold.ttf" />
+    <Resource Include="fonts\poppins-extrabolditalic.ttf" />
+    <Resource Include="fonts\poppins-extralight.ttf" />
+    <Resource Include="fonts\poppins-extralightitalic.ttf" />
+    <Resource Include="fonts\poppins-italic.ttf" />
+    <Resource Include="fonts\poppins-light.ttf" />
+    <Resource Include="fonts\poppins-lightitalic.ttf" />
+    <Resource Include="fonts\poppins-medium.ttf" />
+    <Resource Include="fonts\poppins-mediumitalic.ttf" />
+    <Resource Include="fonts\poppins-regular.ttf" />
+    <Resource Include="fonts\poppins-semibold.ttf" />
+    <Resource Include="fonts\poppins-semibolditalic.ttf" />
+    <Resource Include="fonts\poppins-thin.ttf" />
+    <Resource Include="fonts\poppins-thinitalic.ttf" />
+    <Resource Include="fonts\segoe fluent icons.ttf" />
+    <Resource Include="infiniteyield.png" />
+    <Resource Include="materialdesignicons-webfont.ttf" />
+    <Resource Include="nudes\bg.png" />
+    <Resource Include="nudes\cmd-icon-9.png" />
+    <Resource Include="nudes\dexexplorerv2.png" />
+    <Resource Include="nudes\file.png" />
+    <Resource Include="nudes\infiniteyield.png" />
+    <Resource Include="nudes\unnamed.png" />
+    <Resource Include="scriptlist\1folder.ico" />
+    <Resource Include="scriptlist\2folder.ico" />
+    <Resource Include="scriptlist\file.ico" />
+    <Resource Include="scriptlist\folder_96px.png" />
+    <Resource Include="scriptlist\lua.png" />
+    <Resource Include="scriptlist\txt.ico" />
+    <Resource Include="unnamed.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
